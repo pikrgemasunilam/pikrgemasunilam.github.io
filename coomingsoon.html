@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="/assets/css/coming.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Coming Soon</h1>
+        <p>Kami sedang mempersiapkan sesuatu yang menarik. Silakan kunjungi kembali nanti!</p>
+        <div class="countdown">
+            <div class="days">00</div>
+            <div class="hours">00</div>
+            <div class="minutes">00</div>
+            <div class="seconds">00</div>
+        </div>
+        <p>Daftar untuk pembaruan:</p>
+        <input type="email" placeholder="Email Anda" required>
+        <button>Daftar</button>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("Dec 31, 2024 23:59:59").getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Calculate the distance between now and the countdown date
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the respective divs
+            document.querySelector(".days").innerHTML = String(days).padStart(2, '0');
+            document.querySelector(".hours").innerHTML = String(hours).padStart(2, '0');
+            document.querySelector(".minutes").innerHTML = String(minutes).padStart(2, '0');
+            document.querySelector(".seconds").innerHTML = String(seconds).padStart(2, '0');
+
+            // If the countdown is over, display some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector(".container").innerHTML = "<h1>Sudah Tiba!</h1><p>Terima kasih telah menunggu.</p>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
