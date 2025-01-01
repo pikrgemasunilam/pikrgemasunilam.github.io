@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Game Quiz Official PIK-R GEMAS UNILAM</title>
+  <meta name="description" content="Ayo asah kemampuan materi kamu didalam quiz ini!">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Inter:wght@100;300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Pik-r Gemas</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="index.html">Tentang</a></li>
+          <li><a href="index.html">Program</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="aplikasi.html">Download Aplikasi</a></li>
+          <li class="dropdown"><a href="#"><span>Lainnya</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="index.html">Kontak Kami</a></li>
+              <li><a href="galeri.html">Galeri</a></li>
+              <li><a href="visimisi.html">Visi Misi</a></li>
+              <li><a href="form.html">Pengisian Form</a></li>
+              <li><a href="anggotadugen.html">Anggota Dugen</a></li>
+            </ul>
+          </li>
+          <li><a href="#"class="active">Game Quiz</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="https://wa.me/6285695329135">Konsultasi</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero d-flex align-items-center">
+      <div class="container text-center">
+        <h1 class="mb-4">Selamat Datang di PIK-R GEMAS UNILAM</h1>
+        <p class="mb-4">Bersama kami, mari wujudkan generasi muda yang sehat dan produktif!</p>
+      </div>
+    </section>
+
+      <!-- Quiz Section -->
+  <section id="quiz" class="quiz-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Game Quiz</h2>
+      <div id="quiz-container">
+        <div id="question-container" class="mb-3">
+          <p id="question">Pertanyaan akan muncul di sini</p>
+        </div>
+        <div id="answer-buttons" class="d-grid gap-2">
+          <button class="btn btn-primary answer-btn">Jawaban 1</button>
+          <button class="btn btn-primary answer-btn">Jawaban 2</button>
+          <button class="btn btn-primary answer-btn">Jawaban 3</button>
+          <button class="btn btn-primary answer-btn">Jawaban 4</button>
+        </div>
+        <div id="quiz-controls" class="mt-4 text-center">
+          <button id="start-btn" class="btn btn-success">Mulai Quiz</button>
+          <button id="next-btn" class="btn btn-secondary d-none">Pertanyaan Berikutnya</button>
+        </div>
+        <div id="score-container" class="mt-4 text-center d-none">
+          <h3 id="score-text"></h3>
+          <button id="restart-btn" class="btn btn-primary">Ulangi Quiz</button>
+          <a id="whatsapp-share" class="btn btn-success mt-2" href="https://wa.me/6285882218063" target="_blank">
+            Bagikan ke WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+    const questions = [
+      {
+        question: "Apa kepanjangan dari PIK-R?",
+        answers: [
+          { text: "Pusat Informasi Kesehatan Remaja", correct: true },
+          { text: "Pusat Ilmu Keamanan dan Remaja", correct: false },
+          { text: "Program Inisiatif Kesehatan Rakyat", correct: false },
+          { text: "Pengembangan Inovasi Keluarga Remaja", correct: false }
+        ]
+      },
+      {
+        question: "Apa tujuan utama PIK-R?",
+        answers: [
+          { text: "Meningkatkan kesehatan fisik dan mental remaja", correct: true },
+          { text: "Meningkatkan ekonomi keluarga", correct: false },
+          { text: "Mengurangi pengangguran", correct: false },
+          { text: "Meningkatkan produksi lokal", correct: false }
+        ]
+      },
+      {
+        question: "Siapa target utama program PIK-R?",
+        answers: [
+          { text: "Anak-anak", correct: false },
+          { text: "Remaja", correct: true },
+          { text: "Lansia", correct: false },
+          { text: "Dewasa muda", correct: false }
+        ]
+      },
+      {
+        question: "Apa slogan PIK-R GEMAS?",
+        answers: [
+          { text: "Sehat, Cerdas, Ceria", correct: true },
+          { text: "Bersama Kita Bisa", correct: false },
+          { text: "Pemuda Harapan Bangsa", correct: false },
+          { text: "Menuju Masa Depan Cerah", correct: false }
+        ]
+      },
+      {
+        question: "Apa manfaat utama dari konseling di PIK-R?",
+        answers: [
+          { text: "Meningkatkan pengetahuan tentang kesehatan", correct: true },
+          { text: "Meningkatkan penghasilan keluarga", correct: false },
+          { text: "Memperluas jaringan bisnis", correct: false },
+          { text: "Mengurangi stres orang tua", correct: false }
+        ]
+      }
+    ];
+  
+    const startButton = document.getElementById("start-btn");
+    const nextButton = document.getElementById("next-btn");
+    const restartButton = document.getElementById("restart-btn");
+    const questionContainer = document.getElementById("question-container");
+    const questionElement = document.getElementById("question");
+    const answerButtons = document.getElementById("answer-buttons");
+    const scoreContainer = document.getElementById("score-container");
+    const scoreText = document.getElementById("score-text");
+  
+    let shuffledQuestions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+  
+    startButton.addEventListener("click", startQuiz);
+    nextButton.addEventListener("click", () => {
+      currentQuestionIndex++;
+      setNextQuestion();
+    });
+    restartButton.addEventListener("click", () => {
+      resetQuiz();
+      startQuiz();
+    });
+  
+    function startQuiz() {
+      score = 0;
+      shuffledQuestions = questions.sort(() => Math.random() - 0.5); // Acak pertanyaan
+      currentQuestionIndex = 0;
+      startButton.classList.add("d-none");
+      scoreContainer.classList.add("d-none");
+      questionContainer.classList.remove("d-none");
+      answerButtons.classList.remove("d-none");
+      setNextQuestion();
+    }
+  
+    function setNextQuestion() {
+      resetState();
+      if (currentQuestionIndex < shuffledQuestions.length) {
+        showQuestion(shuffledQuestions[currentQuestionIndex]);
+      } else {
+        showScore();
+      }
+    }
+  
+    function showQuestion(question) {
+      questionElement.innerText = question.question;
+      question.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerText = answer.text;
+        button.classList.add("btn", "btn-primary", "answer-btn");
+        if (answer.correct) {
+          button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click", selectAnswer);
+        answerButtons.appendChild(button);
+      });
+    }
+  
+    function resetState() {
+      nextButton.classList.add("d-none");
+      while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild);
+      }
+    }
+  
+    function selectAnswer(e) {
+      const selectedButton = e.target;
+      const correct = selectedButton.dataset.correct === "true";
+      Array.from(answerButtons.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct);
+      });
+      if (correct) {
+        score++;
+      }
+      if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove("d-none");
+      } else {
+        showScore();
+      }
+    }
+
+    function showScore() {
+  questionContainer.classList.add("d-none");
+  answerButtons.classList.add("d-none");
+  nextButton.classList.add("d-none");
+  scoreContainer.classList.remove("d-none");
+  
+  // Tampilkan skor
+  scoreText.innerText = `Skor Anda: ${score} dari ${shuffledQuestions.length}`;
+
+  // Buat tautan berbagi WhatsApp
+  const shareText = `Saya baru saja menyelesaikan kuis di PIK-R GEMAS UNILAM! Skor saya adalah ${score} dari ${shuffledQuestions.length}. Yuk coba juga! 🌟`;
+  const whatsappUrl = `https://wa.me/6285882218063?text=${encodeURIComponent(shareText)}`;
+  
+  const whatsappShareButton = document.getElementById("whatsapp-share");
+  whatsappShareButton.href = whatsappUrl;
+}
+
+  
+    function showScore() {
+      questionContainer.classList.add("d-none");
+      answerButtons.classList.add("d-none");
+      nextButton.classList.add("d-none");
+      scoreContainer.classList.remove("d-none");
+      scoreText.innerText = `Skor Anda: ${score} dari ${shuffledQuestions.length}`;
+    }
+  
+    function setStatusClass(element, correct) {
+      clearStatusClass(element);
+      if (correct) {
+        element.classList.add("btn-success");
+      } else {
+        element.classList.add("btn-danger");
+      }
+    }
+  
+    function clearStatusClass(element) {
+      element.classList.remove("btn-success");
+      element.classList.remove("btn-danger");
+    }
+  
+    function resetQuiz() {
+      resetState();
+      score = 0;
+      shuffledQuestions = [];
+      currentQuestionIndex = 0;
+      questionContainer.classList.add("d-none");
+      answerButtons.classList.add("d-none");
+      scoreContainer.classList.add("d-none");
+    }
+  </script>
+  
+
+</main>
+
+<footer id="footer" class="footer">
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">PIK-R GEMAS UNILAM</span>
+        </a>
+        <div class="social-links d-flex mt-4">
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Terima Jasa</h4>
+        <ul>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Product Management</a></li>
+          <li><a href="#">Marketing</a></li>
+          <li><a href="#">Graphic Design</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">PIK-R GEMAS UNILAM</strong> <span>All Rights Reserved</span></p>
+    <div class="credits">
+      Powered by <a href="#">Syahdan TECH</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
